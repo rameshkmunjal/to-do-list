@@ -1,0 +1,62 @@
+
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 56px;
+}
+/* ------------------------NAV related CSS settings ------------------------------*/
+.my-nav-bg{
+  background:rgb(80, 54, 38);    
+}
+.my-bg{
+  background:rgb(129, 85, 58);    
+}
+.main{
+  background:rgb(245, 240, 237); 
+  min-height:85vh;
+}
+.nav-link{
+  color:white;
+}
+.my-bg-color{
+  background:rgb(151, 7, 49);   
+}
+/* ------------------------form related CSS settings ------------------------------*/
+.input-form{
+  padding-top: 0px;    
+  margin-top:2.00rem;
+  background:rgba(80, 54, 38, 0.7);
+  padding-bottom:20px;    
+}
+.input-form h2{
+  margin:0 !important;    
+  border-left:10px;
+  border-right:10px;
+}
+.input-form input{    
+  color:#777;
+  font-weight:normal;
+}
+.form-control{
+  width:80%;
+  margin:0 auto;
+}
+/*-------------------------------------------------------------------------------*/
+.error{
+  color:red;
+  font-weight:bold;
+}
+.btn{
+  color:white;
+}
+.btn:hover{
+  background:white;
+  color:rgb(80, 54, 38);
+  font-weight:bold;
+}
+/*-------------------------------------------------------------------------------------*/

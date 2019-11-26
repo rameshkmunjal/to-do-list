@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md my-bg navbar-dark">    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/sign-up']">Sign-up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/forgot-password']">Forgot Password</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="row main">  
+    <div class="col-md-4 offset-md-4">
+        <p class="error text-center">{{errorMessage}}</p>
+        <form class="input-form">
+          <h2 class="text-center text-white pb-2">Login</h2>
+          <div class="mt-4">
+            <input type="text"  name="email" class="form-control" [(ngModel)] ="email" placeholder="E-mail" />
+          </div>
+          <div class="mt-4">
+            <input type="password"  name="password" class="form-control mt-3" [(ngModel)]="password" placeholder="Password" />
+          </div>
+          <div class="d-flex justify-content-center mt-4 mb-3">
+            <button class="btn my-nav-bg" (click)="loginFunction()">Submit</button>
+          </div>
+        </form>
+      </div>
+</div>
