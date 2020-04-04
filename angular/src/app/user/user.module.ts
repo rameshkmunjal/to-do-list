@@ -7,10 +7,11 @@ import {UserService} from './../user.service';
 
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { OtpComponent } from './otp/otp.component';
-import { FormComponent } from './form/form.component';
-import { ResetComponent } from './reset/reset.component';
+import { OtpComponent } from './forgot-password/otp/otp.component';
+import { FormComponent } from './forgot-password/form/form.component';
+import { ResetComponent } from './forgot-password/reset/reset.component';
 import { NavComponent } from './nav/nav.component';
+import { LogOutComponent } from './log-out/log-out.component';
 
 @NgModule({
   imports: [
@@ -18,10 +19,11 @@ import { NavComponent } from './nav/nav.component';
     FormsModule,
     RouterModule.forRoot([
       {path:'sign-up', component:SignUpComponent},
+      {path:'logout/:userId', component:LogOutComponent},
       {path:'forgot-password', component:ForgotPasswordComponent, children:[
         {path:'form', component:FormComponent},
-        {path:'otp', component:OtpComponent},
-        {path:'reset', component:ResetComponent},
+        {path:'otp/:userId', component:OtpComponent},
+        {path:'reset/:code', component:ResetComponent},
         {path:'', redirectTo:'form', pathMatch:'full'}        
       ]}
     ])
@@ -32,7 +34,7 @@ import { NavComponent } from './nav/nav.component';
     OtpComponent, 
     FormComponent, 
     ResetComponent, 
-    NavComponent
+    NavComponent, LogOutComponent
   ],
   providers:[UserService]
 })

@@ -1,3 +1,4 @@
+//this file defines configurations of app
 let appConfig= {};
 
 appConfig.port=3000;

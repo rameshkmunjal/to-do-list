@@ -1,3 +1,4 @@
+//generate response with the help of params
 let generate=(err, message, status, data)=>{
     let response={
         error:err,
@@ -7,7 +8,7 @@ let generate=(err, message, status, data)=>{
     }
     return response;
 }
-
+//function - exported
 module.exports={
     generate:generate
 }

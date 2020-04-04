@@ -1,0 +1,15 @@
+.tbl{
+    font-size:10px;
+    margin-bottom:20px;    
+}
+.tbl td, th{
+    padding:5px 10px;
+     
+
+}
+th{
+    text-align:center;
+}
+.notification-container{
+    background:white;
+}

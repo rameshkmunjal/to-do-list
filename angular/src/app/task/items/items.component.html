@@ -1,0 +1,47 @@
+<div class="item-box" *ngIf="listName">
+    <div class="heading-btn text-center" >{{listName}}</div>
+    <div class="input-btn input-group  mb-3">
+      <input type="text" class="form-control" (keydown)="createItemUsingKeypress($event)" [(ngModel)]="newItem" placeholder="Input Item Name">
+      <div class="input-group-append">
+        <button class="addItemBtn" type="submit" (click)="createItem()">Add Item</button>
+      </div>
+    </div>
+
+    <div *ngIf="items.length > 0 ; else infoText ">
+        <div  *ngFor="let item of items"  class="list-btn" (click)="showSubItems(item.itemId, item.itemName)">            
+            <span class="ml-3 light-color-text" >{{item.itemName}}</span>
+
+            <span class="pull-right mr-3">
+              <i class="fa fa-times-circle-o" aria-hidden="true" (click)="deleteItem(item.originId)"></i>
+            </span>
+            <span class="pull-right reqBtn mr-3"
+            [ngClass]="{'reqBtn': item.status == 'open', 'doneBtn': item.status == 'done' }"
+                (click)="changeStatus(item.originId)" >{{item.status}}</span>
+            <span class="pull-right reqBtn mr-3" (click)="showEditModal(item.originId, item.itemName)">Edit</span>
+        </div>         
+    </div> 
+    <ng-template #infoText>
+            <p class="text-center message-para">No Item to display</p>
+    </ng-template>
+              
+</div>
+<!-------------------------------------------------------------------------------------------------------------->
+<div id="editItemModal">
+    <div class="mb-3" style="font-size:18px;">
+        <span class="pull-right mr-3">
+            <i class="fa fa-times-circle-o mb-3" aria-hidden="true" 
+             (click)="closeEditModal()"></i>
+        </span>
+    </div>
+  <form class="full-width mt-3">
+      <h5 class="text-center"> Edit</h5>      
+      <div class="full-width mt-3">
+          <label for="itemName">Item Name :</label>
+          <input type="text" name="itemName" value="{{itemName}}" [(ngModel)]="itemName" />
+      </div>
+      <div class="full-width text-center">
+          <button class="editBtn" (click)="editItem(itemId)">Submit</button>
+      </div>
+  </form>  
+</div>
+<!----------------------------------------------------------------------------------------->

@@ -1,3 +1,4 @@
+
 const mongoose= require('mongoose');
 const Schema=mongoose.Schema;
 
@@ -7,7 +8,10 @@ const UserSchema=new Schema({
     lastName:{type:String, default:''},
     email:{type:String, default:''},
     password:{type:String, default:''},
-    mobile:{type:String, default:''}
+    country:{type:String, default:''},
+    countryCode:{type:String, default:''},
+    mobile:{type:String, default:''},
+    friends:[]
 })
 
 mongoose.model('User', UserSchema);

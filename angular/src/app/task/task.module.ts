@@ -1,26 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
+import { FriendListComponent } from './friend-list/friend-list.component';
+import { TaskNavComponent } from './task-nav/task-nav.component';
 
-import { AllTasksComponent } from './all-tasks/all-tasks.component';
-import { SingleTaskComponent } from './single-task/single-task.component';
-import { CreateTaskComponent } from './create-task/create-task.component';
+import { ListComponent } from './list/list.component';
+import { ItemsComponent } from './items/items.component';
+import { SubItemsComponent } from './sub-items/sub-items.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { KeypressEventDirective } from './keypress-event.directive';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forRoot([
-      {path:'allTasks', component:AllTasksComponent},
-      {path:'create-task', component:CreateTaskComponent}
+      {path:'home', component:HomeComponent},
+      {path:'notifications', component:NotificationsComponent }
     ])
   ],
-  declarations: [    
-    AllTasksComponent, 
-    SingleTaskComponent, 
-    CreateTaskComponent
+  declarations: [
+    HomeComponent, 
+    FriendListComponent, 
+    TaskNavComponent,     
+    ListComponent, 
+    ItemsComponent, 
+    SubItemsComponent, 
+    NotificationsComponent, KeypressEventDirective
   ]
 })
 export class TaskModule { }
